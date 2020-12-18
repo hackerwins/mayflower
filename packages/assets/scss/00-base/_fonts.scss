@@ -89,7 +89,6 @@
 @if $fonts-langs-support {
 
 	// Arabic
-
   @supports ( font-variation-settings: normal ) {
 
     @font-face {
@@ -109,7 +108,6 @@
   }
 
 	// Cyrillic
-
 	@supports ( font-variation-settings: normal ) {
 
 		@font-face {
@@ -129,7 +127,6 @@
 	}
 
 	// Greek
-
 	@supports ( font-variation-settings: normal ) {
 
 		@font-face {
