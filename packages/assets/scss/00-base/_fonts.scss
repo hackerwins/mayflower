@@ -89,7 +89,6 @@
 @if $fonts-langs-support {
 
 	// Arabic
-
   @supports ( font-variation-settings: normal ) {
 
     @font-face {
@@ -109,7 +108,6 @@
   }
 
 	// Cyrillic
-
 	@supports ( font-variation-settings: normal ) {
 
 		@font-face {
@@ -148,8 +146,26 @@
 		@include ma-font-face(Noto, Sans, Greek, null, Regular, -subset, $fonts-normal, normal, $fonts-display-global, langs.$myanmar, null, null);
 	}
 
-  // Hebrew
+	// Greek
+	@supports ( font-variation-settings: normal ) {
 
+		@font-face {
+
+			@include ma-font-face(Noto, Sans, Greek, null, VF, -subset, 100 900, normal, $fonts-display-global, langs.$myanmar, null, null);
+		}
+	}
+
+	@font-face {
+
+		@include ma-font-face(Noto, Sans, Greek, null, Bold, -subset, $fonts-bold, normal, $fonts-display-global, langs.$myanmar, null, null);
+	}
+
+	@font-face {
+
+		@include ma-font-face(Noto, Sans, Greek, null, Regular, -subset, $fonts-normal, normal, $fonts-display-global, langs.$myanmar, null, null);
+	}
+
+  // Hebrew
   @supports ( font-variation-settings: normal ) {
 
     @font-face {
@@ -169,7 +185,6 @@
   }
 
   // Khmer
-
   @supports ( font-variation-settings: normal ) {
 
     @font-face {
@@ -189,7 +204,6 @@
   }
 
   // Myanmar
-
   @supports ( font-variation-settings: normal ) {
 
     @font-face {
@@ -221,22 +235,32 @@ html {
 // Set language support fonts (conditionally)
 
 @if $fonts-langs-support {
-
+	// arabic
   * {
 
     @include ma-langlist(langs.$arabic-sans, rtl, langs.$langs-Arab);
   }
+	// Cyrillic
+	* {
 
+    @include ma-langlist(langs.$cyrillic-sans, rtl, langs.$langs-Cyrl);
+  }
+	// Greek
+	* {
+
+    @include ma-langlist(langs.$greek-sans, rtl, langs.$langs-Grek);
+  }
+	// Hebrew
   * {
 
     @include ma-langlist(langs.$hebrew-sans, rtl, langs.$langs-Hebr);
   }
-
+	// Khmer
   * {
 
     @include ma-langlist(langs.$khmer-sans, null, langs.$langs-Khmr);
   }
-
+	// Myanmar
   * {
 
     @include ma-langlist(langs.$myanmar-sans, null, langs.$langs-Mymr);
